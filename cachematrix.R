@@ -59,9 +59,10 @@ cacheSolve <- function(inCacheMatrix, ...) {
     if(!is.null(invMat)){
         ## The cached inverse was found and it is not needed to be solved
         message("Getting cached inverse matrix")
-        ## The code returns the cached inverse and exits here.
-        return invMat
+        ## The code returns the cached inverse and exits here
+        return(invMat)
     }
+    message("Inverse matrix not cached yet, solving the matrix.")
     ## If the inverse was not cached then the original matrix is retrieved
     origMat <- inCacheMatrix$get()
     ## then solved
